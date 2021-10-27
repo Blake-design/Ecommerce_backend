@@ -17,13 +17,11 @@ Category.hasMany(Product, {
 // Products belongToMany Tags (through ProductTag)
 
 Product.belongsToMany(Tag, {
-  foriegnKey: "tag_id",
-  onDelete: "CASCADE",
+  through: ProductTag,
 });
 // Tags belongToMany Products (through ProductTag)
 Tag.belongsToMany(Product, {
-  foriegnKey: "tag_id",
-  onDelete: "CASCADE",
+  through: ProductTag,
 });
 module.exports = {
   Product,

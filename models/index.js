@@ -18,10 +18,12 @@ Category.hasMany(Product, {
 
 Product.belongsToMany(Tag, {
   through: ProductTag,
+  foriegnKey: "product_id",
 });
 // Tags belongToMany Products (through ProductTag)
 Tag.belongsToMany(Product, {
   through: ProductTag,
+  foriegnKey: "tag_id",
 });
 module.exports = {
   Product,
